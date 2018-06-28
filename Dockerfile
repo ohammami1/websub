@@ -7,8 +7,8 @@ RUN apt-get update -qq && apt-get install -y \
     nodejs 
     
 RUN mkdir /sub_project
-ADD entrypoint.sh /sub_project/
-RUN chmod +x /sub_project/entrypoint.sh
+ADD /entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/sub_project/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /sub_project
